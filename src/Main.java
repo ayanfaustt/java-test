@@ -1,6 +1,4 @@
-import bt.edu.desafio.Conteudo;
-import bt.edu.desafio.Curso;
-import bt.edu.desafio.Mentoria;
+import bt.edu.desafio.*;
 
 import java.time.LocalDate;
 
@@ -30,6 +28,23 @@ public class Main {
 
         //exemplo de polimorfismo
         Conteudo conteudo = new Curso();
+
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java");
+        bootcamp.setDescricao("Descrição do BootCamp de Java");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev ayan = new Dev();
+        ayan.setNome("Ayan");
+        ayan.inscreverBootcamp(bootcamp);
+
+        System.out.println(bootcamp.getConteudos());
+
+        System.out.println(ayan.getNome() + ayan.getConteudosIncritos());
+
 
     }
 }
